@@ -1,0 +1,458 @@
+
+
+body {
+    position: relative;
+    background-color: lightblue;
+}
+
+.container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 980px;
+    height: 630px;
+    border: rgb(33, 33, 33) 10px solid;
+    border-radius: 6px;
+}
+
+
+/* Навигация------------------------------------------------- */
+
+.nav {
+    z-index: 100;
+    position: absolute;
+    bottom: 20px;
+    left: 2px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.players-cont {
+    display: flex;
+    background: url(./../imgs/БлокДрузья.png);
+    width: 536px;
+    height: 63px;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.left-btn {
+    border: none;
+    width: 16px;
+    height: 29px;
+    margin-left: 5px;
+    background: none;
+    cursor: pointer;
+    margin-right: 9px;
+}
+
+.right-btn {
+    border: none;
+    width: 16px;
+    height: 29px;
+    margin-right: 15px;
+    background: none;
+    cursor: pointer;
+}
+
+.players-slider {
+    overflow: hidden;
+    height: 60px;
+    
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 465px;
+    position: relative;
+    margin-top: 5px;
+    
+    transition: 500ms;
+    left: 0px;
+}
+
+.player {
+    margin-right: 9px;
+}
+
+.player-back {
+    background: url(./../imgs/back-icon.png);
+    width: 50px;
+    height: 51px;   
+    position: relative;
+    cursor: pointer;
+}
+
+.player-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plus {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.chat {
+    width: 77px;
+    height: 66px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.go {
+    background: url(./../imgs/go.png);
+    border: none;
+    width: 207px;
+    height: 68px;
+    cursor: pointer;
+    font-family: "Cambria";
+    color: rgb(252, 250, 249);
+    line-height: 0.884;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgb(33, 30, 31);
+    font-size: 32px;
+}
+
+.messages {
+    width: 77px;
+    height: 66px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.rating {
+    background: url(./../imgs/rating-back.png);
+    border: none;
+    cursor: pointer;
+    width: 66px;
+    height: 61px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.rating-img {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Окно рейтинга -------------------------------------------------------------------------*/
+
+.popup-rating-container {
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    height: 0;
+    width: 100%;
+    overflow: auto; 
+}
+
+.popup-rating {
+    background-image: url(./../imgs/rating-popup-background.png);
+    position: absolute;
+    left: 240px;
+    top: -455px;
+    width: 523px;
+    height: 455px;
+    z-index: 1000;
+    transition: 1000ms;
+}
+
+.popup-title {
+    background-image: url(./../imgs/popup-title-background.png);
+    position: absolute;
+    left: 50%;
+    top: -3%;
+    transform: translate(-50%);
+    width: 264px;
+    height: 33px;
+    text-align: center;
+}
+
+.title-text {
+    margin-top: 5px;
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.rating-list-container {
+    background-image: url(./../imgs/list-background.png);
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 464px;
+    height: 324px;
+}
+
+.rating-list {
+    height: 233px;
+    overflow-y: scroll;
+    margin-top: 65px;   
+    margin-right: 10px; 
+}
+.rating-list::-webkit-scrollbar {
+    width: 15px;
+}
+.rating-list::-webkit-scrollbar-track {
+    background: #0087a2;
+    border: 1px #006378 solid;
+    border-radius: 5px;
+}
+.rating-list::-webkit-scrollbar-thumb {
+    background: #3d9eb6;
+    border-radius: 5px;
+    border: 1px #006378 solid;
+}
+
+.list-title {
+    background-image: url(./../imgs/list-title-back.png);
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%);
+    width: 403px;
+    height: 29px;
+    display: flex;
+    color: rgb(252, 250, 249);
+    text-shadow: 1px 1px 1px black;
+}
+
+.title-place {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.title-name {
+    margin-left: 56px;
+    margin-top: 5px;
+}
+
+.title-points {
+    margin-left: 125px;
+    margin-top: 5px;
+}
+
+tr {
+    display: block;
+    background-image: url(./../imgs/rating-player-back.png);
+    left: 31px;
+    width: 403px;
+    height: 27px;
+    position: relative;
+    color: rgb(252, 250, 249);
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 7px;
+}
+
+.rating-place {
+    display: inline-block;
+    margin-left: 35px;
+    margin-top: 4px; 
+    width: 15px;
+}
+
+.rating-player-img {
+    display: inline-block;
+    width: 30px;
+    height: 29px;
+    position: absolute;
+    left: 70px
+}
+  
+.rating-name {
+    display: inline-block;
+    margin-left: 65px;
+    width: 200px;
+}
+
+.rating-points {
+    display: inline-block;
+    margin-left: 18px;
+}
+
+.friend {
+    color: lightgreen;
+}
+
+
+/* Игра------------------------------------------------- */
+
+.background { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.furniture {   
+    position: absolute;
+    width: 100%;
+    height: 96%;
+}
+
+.stairs {
+    position: absolute;
+    left: 378px;
+    top: 459px;
+    width: 60px;
+    height: 50px;
+}
+
+.first-course {
+    position: absolute;
+    left: 430px;
+    top: 500px;      
+} 
+
+.final {
+    position: absolute;
+    left: 862px;
+    top: 150px; 
+}
+
+.path {
+    position: absolute;
+    left: 78px;
+    top: 21px;
+    width: 899px;
+    height: 524px;
+}
+  
+.flower {
+    position: absolute;
+    left: 355px;
+    top: 475px;
+    width: 55px;
+    height: 69px;     
+}
+
+.girl {
+    position: absolute;
+    left: 434px;
+    top: 438px;
+    width: 21px;
+    height: 69px; 
+    z-index: 100;
+    transition: 1500ms;
+}
+
+.start-point {
+    position: absolute;
+    left: 427px;
+    top: 493px;
+    width: 36px;
+    height: 26px;   
+}
+
+.p1 {
+    position: absolute;
+    left: 341px;
+    top: 469px;
+    width: 21px;
+    height: 15px;     
+}
+
+.p2 {
+    position: absolute;
+    width: 21px;
+    height: 15px;   
+    left: 267px;
+    top: 512px;
+}
+
+.p3 {
+    position: absolute;
+    width: 21px;
+    height: 15px;   
+    left: 180px;
+    top: 530px;
+}
+
+.p4 {
+    position: absolute;
+    width: 21px;
+    height: 15px;  
+    left: 101px;
+    top: 502px; 
+}
+
+.p5 {
+    position: absolute;
+    left: 111px;
+    top: 436px;
+    width: 25px;
+    height: 17px;  
+}
+
+.p6 {
+    position: absolute;
+    width: 21px;
+    height: 15px; 
+    left: 133px;
+    top: 382px;  
+}
+
+.p7 {
+    position: absolute;
+    width: 21px;
+    height: 15px;   
+    left: 205px;
+    top: 345px;
+}
+
+.p8 {
+    position: absolute;
+    width: 21px;
+    height: 15px;   
+    left: 167px;
+    top: 274px;
+}
+
+.p9 {
+    position: absolute;
+    width: 21px;
+    height: 15px;   
+    left: 129px;
+    top: 221px; 
+}
+
+.p10 {
+    position: absolute;
+    left: 189px;
+    top: 189px;
+    width: 25px;
+    height: 17px;
+}
+
+.p11 {
+    position: absolute;
+    left: 863px;
+    top: 155px;
+    width: 44px;
+    height: 34px;
+}
+
+
+
